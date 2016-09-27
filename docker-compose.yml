@@ -1,0 +1,12 @@
+version: '2'
+services:
+  nextcloud-db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: nextcloud
+      POSTGRES_USER: nextcloud
+      POSTGRES_DB: nextcloud
+  nextcloud:
+    image: ubuntu
+    depends_on:
+      - nextcloud-db
